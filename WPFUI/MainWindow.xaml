@@ -1,0 +1,58 @@
+﻿<Window x:Class="WPFUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUI"
+        mc:Ignorable="d"
+        Title="Old School RPG" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="176"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="196" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Background="AliceBlue"     
+            Grid.ColumnSpan="2"
+            Content="Menu"
+        />
+
+        <Label 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Background="Aquamarine"
+            Content="Player Data"
+        />
+
+        <Label 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Background="Beige"
+            Content="Game Data"
+        />
+
+        <Label 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Background="BurlyWood"
+            Content="Inventory / Quests"
+        />
+
+        <Label 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Background="Lavender"
+            Content="Combat / Movement Controls"
+        />        
+
+    </Grid>
+</Window>
