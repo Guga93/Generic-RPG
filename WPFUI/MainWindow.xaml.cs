@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Engine.ViewModels;
+
 namespace WPFUI
 {
     /// <summary>
@@ -20,9 +22,13 @@ namespace WPFUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GameSession _gameSession;
         public MainWindow()
         {
             InitializeComponent();
+
+            _gameSession= new GameSession();
+            DataContext= _gameSession;
         }
     }
 }

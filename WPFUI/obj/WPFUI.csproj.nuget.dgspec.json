@@ -4,6 +4,21 @@
     "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\WPFUI\\WPFUI.csproj": {}
   },
   "projects": {
+    "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\Engine\\Engine.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\Engine\\Engine.csproj",
+        "projectName": "Engine",
+        "projectPath": "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\Engine\\Engine.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\WPFUI\\WPFUI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +42,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\Engine\\Engine.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Gustavo\\Projetos\\Generic-RPG\\Engine\\Engine.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

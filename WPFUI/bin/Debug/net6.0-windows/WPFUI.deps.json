@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "WPFUI/1.0.0": {
+        "dependencies": {
+          "Engine": "1.0.0"
+        },
         "runtime": {
           "WPFUI.dll": {}
+        }
+      },
+      "Engine/1.0.0": {
+        "runtime": {
+          "Engine.dll": {}
         }
       }
     }
   },
   "libraries": {
     "WPFUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Engine/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

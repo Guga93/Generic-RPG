@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\bin\Debug\Engine.dll
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\bin\Debug\Engine.pdb
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\obj\Debug\Engine.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\obj\Debug\Engine.dll
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\obj\Debug\Engine.pdb
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\Engine\obj\Debug\Engine.g.resources

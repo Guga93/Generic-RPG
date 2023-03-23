@@ -40,3 +40,6 @@ C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\obj\Debug\net6.0-window
 C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\obj\Debug\net6.0-windows\WPFUI.pdb
 C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\obj\Debug\net6.0-windows\WPFUI.genruntimeconfig.cache
 C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\obj\Debug\net6.0-windows\ref\WPFUI.dll
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\bin\Debug\net6.0-windows\Engine.dll
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\bin\Debug\net6.0-windows\Engine.pdb
+C:\Users\user\Desktop\Gustavo\Projetos\Generic-RPG\WPFUI\obj\Debug\net6.0-windows\WPFUI.csproj.CopyComplete
