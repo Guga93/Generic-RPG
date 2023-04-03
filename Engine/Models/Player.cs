@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
@@ -16,6 +17,7 @@ namespace Engine.Models
         private int _experiencePoints;
         private int _level;
         private int _gold;
+        private ObservableCollection<GameItem> _inventory = new ObservableCollection<GameItem>();
 
         public string Name
         {
@@ -93,6 +95,13 @@ namespace Engine.Models
             {
                 _gold = value;
                 OnPropertyChanged(nameof(Gold));
+            }
+        }
+        public ObservableCollection<GameItem> Inventory
+        {
+            get
+            {
+                return _inventory;
             }
         }
 
