@@ -115,6 +115,23 @@ namespace Engine.Models
             _inventory.Add(item);
             OnPropertyChanged(nameof(Weapons));
         }
+        public void RemoveItemFromInventory(GameItem item)
+        {
+            _inventory.Remove(item); ;
+            OnPropertyChanged(nameof(Weapons));
+        }
+
+        public bool HasAllTheseItems(List<ItemQuantity> items)
+        {
+            foreach (ItemQuantity item in items)
+            {
+                if (Inventory.Count(i => i.ItemTypeId == item.ItemId) < item.Quantity)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

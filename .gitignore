@@ -1,3 +1,5 @@
 # Folders
 WPFUI/
 .vs/
+Engine/bin/
+Engine/obj/
