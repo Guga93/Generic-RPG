@@ -13,33 +13,54 @@ namespace Engine.Factories
         {
             World NewWorld = new World();
 
+            #region LOCATIONS
             NewWorld.AddLocation(-2, -1, "Farmer's Field",
                 "There are rows of corn growing here, with giant rats hiding between them.",
-                "/Engine;component/Images/Locations/FarmFields.png");
+                "FarmFields.png");
+
             NewWorld.AddLocation(-1, -1, "Farmer's House",
                 "This is the house of your neighbor, Farmer Ted.",
-                "/Engine;component/Images/Locations/Farmhouse.png");
+                "Farmhouse.png");
+
             NewWorld.AddLocation(0, -1, "Home",
                 "This is your home",
-                "/Engine;component/Images/Locations/Home.png");
+                "Home.png");
+
             NewWorld.AddLocation(-1, 0, "Trading Shop",
                 "The shop of Susan, the trader.",
-                "/Engine;component/Images/Locations/Trader.png");
+                "Trader.png");
+
             NewWorld.AddLocation(0, 0, "Town square",
                 "You see a fountain here.",
-                "/Engine;component/Images/Locations/TownSquare.png");
+                "TownSquare.png");
+
             NewWorld.AddLocation(1, 0, "Town Gate",
                 "There is a gate here, protecting the town from giant spiders.",
-                "/Engine;component/Images/Locations/TownGate.png");
+                "TownGate.png");
+
             NewWorld.AddLocation(2, 0, "Spider Forest",
                 "The trees in this forest are covered with spider webs.",
-                "/Engine;component/Images/Locations/SpiderForest.png");
+                "SpiderForest.png");
+
             NewWorld.AddLocation(0, 1, "Herbalist's hut",
                 "You see a small hut, with plants drying from the roof.",
-                "/Engine;component/Images/Locations/HerbalistsHut.png");
+                "HerbalistsHut.png");            
+
             NewWorld.AddLocation(0, 2, "Herbalist's garden",
                 "There are many plants here, with snakes hiding behind them.",
-                "/Engine;component/Images/Locations/HerbalistsGarden.png");
+                "HerbalistsGarden.png");
+            #endregion
+
+            #region QUEST
+            NewWorld.LocationAt(0, 1).QuestAvaiable.Add(QuestFactory.GetQuestById(1));
+            #endregion
+
+            #region MONSTER
+            NewWorld.LocationAt(-2, -1).AddMosnter(2, 100);
+            NewWorld.LocationAt(0, 2).AddMosnter(1, 100);
+            NewWorld.LocationAt(2, 0).AddMosnter(3, 100);
+            #endregion
+
             return NewWorld;
         }
     }

@@ -18,6 +18,7 @@ namespace Engine.Models
         private int _level;
         private int _gold;
         private ObservableCollection<GameItem> _inventory = new ObservableCollection<GameItem>();
+        private ObservableCollection<QuestStatus> _quests = new ObservableCollection<QuestStatus>();
 
         public string Name
         {
@@ -99,14 +100,23 @@ namespace Engine.Models
         }
         public ObservableCollection<GameItem> Inventory
         {
-            get
-            {
-                return _inventory;
-            }
+            get { return _inventory;}
+        }
+        public ObservableCollection<QuestStatus> Quests
+        {
+            get { return _quests; }
+            set { _quests = value; }
+        }
+        public List<GameItem> Weapons => Inventory.Where(i => i is Weapon).ToList();
+
+
+        public void AddItemToInventory(GameItem item)
+        {
+            _inventory.Add(item);
+            OnPropertyChanged(nameof(Weapons));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
