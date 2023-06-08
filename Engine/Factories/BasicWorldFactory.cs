@@ -61,6 +61,11 @@ namespace Engine.Factories
             NewWorld.LocationAt(2, 0).AddMosnter(3, 100);
             #endregion
 
+            #region TRADERS
+            NewWorld.LocationAt(-1, -1).TraderHere = TradersFactory.GetTraderByName("Farmer Ted");
+            NewWorld.LocationAt(-1, 0).TraderHere = TradersFactory.GetTraderByName("Susan");
+            NewWorld.LocationAt(0, 1).TraderHere = TradersFactory.GetTraderByName("Pete the Herbalist");
+            #endregion
             return NewWorld;
         }
     }

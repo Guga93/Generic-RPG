@@ -52,6 +52,7 @@ namespace Engine.Models
             get { return _monstersHere; }
             set { _monstersHere = value; }
         }
+        public Trader TraderHere { get; set; }
         //Add monster to location. If monster already in location change it's chance of encounter.
         public void AddMosnter(int monsterId, int chanceOfEncounter)
         {

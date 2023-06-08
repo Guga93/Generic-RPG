@@ -13,7 +13,8 @@ namespace Engine.ViewModels
     public class GameSession : INotifyPropertyChanged
     {
         private Location _currentLocation;
-        private Monster _currentMonster;        
+        private Monster _currentMonster;     
+        private Trader _currentTrader;
         public Location CurrentLocation {
             get 
             {
@@ -21,6 +22,9 @@ namespace Engine.ViewModels
             }
             set {
                 _currentLocation = value;
+
+                CurrentTrader = CurrentLocation.TraderHere;
+
                 OnPropertyChanged(nameof(CurrentLocation));
                 OnPropertyChanged(nameof(HasLocationToNorth));
                 OnPropertyChanged(nameof(HasLocationToEast));
@@ -51,12 +55,24 @@ namespace Engine.ViewModels
         public Player CurrentPlayer { get; set; }        
         public World CurrentWorld { get; set; }
         public Weapon CurrentWeapon { get; set; }
+        public Trader CurrentTrader
+        {
+            get { return _currentTrader; }
+            set
+            {
+                _currentTrader = value;
+
+                OnPropertyChanged(nameof(CurrentTrader));
+                OnPropertyChanged(nameof(HasTrader));
+            }
+        }
         public bool HasLocationToNorth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1) != null;
         public bool HasLocationToSouth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1) != null;
         public bool HasLocationToEast => CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate) != null;
         public bool HasLocationToWest => CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate) != null;
         public bool HasMonster => CurrentMonster != null;
-       
+        public bool HasTrader => CurrentTrader != null;
+
 
         public GameSession()
         {
@@ -71,7 +87,7 @@ namespace Engine.ViewModels
             };
 
             CurrentWorld = BasicWorldFactory.CreateWorld();
-            CurrentLocation = CurrentWorld.LocationAt(0, -1);
+            CurrentLocation = CurrentWorld.LocationAt(0, -1);            
 
             if (!CurrentPlayer.Weapons.Any())
             {
@@ -82,6 +98,7 @@ namespace Engine.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public event EventHandler<GameMessageEventArgs> OnMessageRaised;
+
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
