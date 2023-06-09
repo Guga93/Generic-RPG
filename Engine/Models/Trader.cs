@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    public class Trader : INotifyPropertyChanged
+    public class Trader : BaseNotification
     {
         public string Name { get; private set; }
         public ObservableCollection<GameItem> Inventory { get; private set; }
@@ -26,13 +26,5 @@ namespace Engine.Models
         {
             Inventory.Remove(item);
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
     }
 }

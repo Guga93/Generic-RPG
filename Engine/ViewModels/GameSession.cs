@@ -10,7 +10,7 @@ using Engine.Models;
 
 namespace Engine.ViewModels
 {
-    public class GameSession : INotifyPropertyChanged
+    public class GameSession : BaseNotification
     {
         private Location _currentLocation;
         private Monster _currentMonster;     
@@ -74,6 +74,9 @@ namespace Engine.ViewModels
         public bool HasTrader => CurrentTrader != null;
 
 
+        public event EventHandler<GameMessageEventArgs> OnMessageRaised;
+
+
         public GameSession()
         {
             CurrentPlayer = new Player
@@ -95,14 +98,6 @@ namespace Engine.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public event EventHandler<GameMessageEventArgs> OnMessageRaised;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public void MoveNorth()
         {
             if (HasLocationToNorth)

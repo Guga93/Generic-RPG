@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    public class Monster : INotifyPropertyChanged
+    public class Monster : BaseNotification
     {
         private string _name;
         private string _imageName;
@@ -80,12 +80,6 @@ namespace Engine.Models
             RewardGold = rewardGold;           
             MinDamage = minDamage;
             MaxDamage = maxDamage;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

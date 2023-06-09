@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
-    public class Player : INotifyPropertyChanged
+    public class Player : BaseNotification
     {
         private string _name;
         private string _characterClass;
@@ -120,7 +120,6 @@ namespace Engine.Models
             _inventory.Remove(item); ;
             OnPropertyChanged(nameof(Weapons));
         }
-
         public bool HasAllTheseItems(List<ItemQuantity> items)
         {
             foreach (ItemQuantity item in items)
@@ -131,12 +130,6 @@ namespace Engine.Models
                 }
             }
             return true;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        }        
     }
 }
