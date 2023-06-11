@@ -290,13 +290,13 @@
 
                             <DataGridTextColumn 
                                 Header="Description"
-                                Binding="{Binding Name}"
+                                Binding="{Binding Item.Name}"
                                 Width="*"
                             />
 
                             <DataGridTextColumn
-                                Header="Price"
-                                Binding="{Binding Price}"
+                                Header="Qtd."
+                                Binding="{Binding Quantity}"
                                 Width="Auto"                            
                             />
                         </DataGrid.Columns>

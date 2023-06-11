@@ -23,7 +23,7 @@ namespace Engine.Models
         public string Name
         { 
             get { return _name; } 
-            set { _name = value; }
+            private set { _name = value; }
         }
         public string ImageName
         {
@@ -33,7 +33,7 @@ namespace Engine.Models
         public int HitPoints
         {
             get { return _hitPoints; }
-            set
+            private set
             {
                 _hitPoints = value;
                 OnPropertyChanged(nameof(HitPoints));
@@ -42,7 +42,7 @@ namespace Engine.Models
         public int MaxHitPoints
         {
             get { return _maxHitPoints; }
-            set { _maxHitPoints = value; }
+            private set { _maxHitPoints = value; }
         }
         public int RewardExperiencePoints
         {
@@ -80,6 +80,20 @@ namespace Engine.Models
             RewardGold = rewardGold;           
             MinDamage = minDamage;
             MaxDamage = maxDamage;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            HitPoints -= damage;
+        }
+        public void Heal(int damageCured)
+        {
+            HitPoints += damageCured;
+
+            if (HitPoints > MaxHitPoints)
+            {
+                HitPoints = MaxHitPoints;
+            }
         }
     }
 }
